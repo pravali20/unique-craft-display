@@ -1,4 +1,4 @@
-import { GraduationCap, MapPin, Calendar } from "lucide-react";
+import { GraduationCap, MapPin, Calendar, User } from "lucide-react";
 
 const About = () => {
   const educationData = [
@@ -31,12 +31,20 @@ const About = () => {
   return (
     <div className="min-h-screen pt-24 pb-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-16 animate-fade-in">
+          <h1 className="text-4xl sm:text-5xl font-bold gradient-text mb-4">About Me</h1>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Get to know me better through my journey and experiences
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* My Journey Section */}
           <div className="space-y-8 animate-fade-in">
             <div className="glass-card p-8 rounded-2xl">
               <div className="flex items-center space-x-3 mb-6">
-                <GraduationCap className="h-8 w-8 text-primary" />
+                <User className="h-8 w-8 text-primary" />
                 <h2 className="text-3xl font-bold gradient-text">My Journey</h2>
               </div>
               
@@ -67,12 +75,17 @@ const About = () => {
 
           {/* Education Timeline */}
           <div className="space-y-8 animate-slide-up">
+            <div className="flex items-center space-x-3 mb-6">
+              <GraduationCap className="h-8 w-8 text-secondary" />
+              <h2 className="text-3xl font-bold gradient-text">Education Timeline</h2>
+            </div>
+            
             <div className="space-y-6">
               {educationData.map((item, index) => (
                 <div key={index} className="glass-card p-6 rounded-2xl hover:scale-105 transition-all duration-300">
                   <div className="flex items-start space-x-4">
                     <div className="flex-shrink-0">
-                      <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${item.color} flex items-center justify-center text-white font-bold`}>
+                      <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${item.color} flex items-center justify-center text-white font-bold text-2xl`}>
                         {item.icon}
                       </div>
                     </div>
@@ -97,6 +110,44 @@ const About = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Additional Personal Info Section */}
+        <div className="mt-16 animate-fade-in">
+          <div className="glass-card p-8 rounded-2xl">
+            <h3 className="text-2xl font-bold gradient-text mb-6 text-center">What Drives Me</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="text-center space-y-3">
+                <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center text-2xl">
+                  💡
+                </div>
+                <h4 className="text-lg font-semibold text-foreground">Innovation</h4>
+                <p className="text-sm text-muted-foreground">
+                  Creating solutions that solve real-world problems through technology
+                </p>
+              </div>
+              
+              <div className="text-center space-y-3">
+                <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-2xl">
+                  📚
+                </div>
+                <h4 className="text-lg font-semibold text-foreground">Learning</h4>
+                <p className="text-sm text-muted-foreground">
+                  Constantly expanding my knowledge and staying updated with latest trends
+                </p>
+              </div>
+              
+              <div className="text-center space-y-3">
+                <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-green-500 to-teal-500 flex items-center justify-center text-2xl">
+                  🤝
+                </div>
+                <h4 className="text-lg font-semibold text-foreground">Collaboration</h4>
+                <p className="text-sm text-muted-foreground">
+                  Working with teams to build amazing projects and share knowledge
+                </p>
+              </div>
             </div>
           </div>
         </div>
