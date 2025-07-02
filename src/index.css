@@ -2,41 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Portfolio Design System - Dark gradient theme with glassmorphism effects */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Dark gradient background */
+    --background: 224 39% 7%;
+    --background-secondary: 225 30% 12%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Glass card effects */
+    --card: 225 25% 15%;
+    --card-foreground: 210 40% 98%;
+    --card-glass: 225 25% 15% / 0.8;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 225 25% 15%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary brand colors - Blue/Cyan */
+    --primary: 200 100% 70%;
+    --primary-foreground: 224 39% 7%;
+    --primary-glow: 195 100% 75%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary purple accent */
+    --secondary: 270 60% 70%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted colors for text */
+    --muted: 225 15% 25%;
+    --muted-foreground: 210 20% 70%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent colors */
+    --accent: 195 100% 75%;
+    --accent-foreground: 224 39% 7%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 225 15% 25%;
+    --input: 225 15% 25%;
+    --ring: 200 100% 70%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(224 39% 7%), hsl(225 30% 12%), hsl(260 25% 15%));
+    --gradient-card: linear-gradient(135deg, hsl(225 25% 15% / 0.8), hsl(225 25% 18% / 0.6));
+    --gradient-accent: linear-gradient(135deg, hsl(200 100% 70%), hsl(270 60% 70%));
+    --gradient-text: linear-gradient(135deg, hsl(200 100% 70%), hsl(270 60% 70%));
+
+    /* Shadows and glows */
+    --shadow-glass: 0 8px 32px hsl(224 39% 7% / 0.3);
+    --shadow-glow: 0 0 40px hsl(200 100% 70% / 0.3);
+    --shadow-card: 0 10px 30px hsl(224 39% 7% / 0.5);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +124,70 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background: var(--gradient-primary);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  /* Glass card component */
+  .glass-card {
+    background: var(--gradient-card);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-glass);
+    transition: var(--transition-smooth);
+  }
+
+  .glass-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Progress bar animations */
+  @keyframes progressFill {
+    from { width: 0%; }
+    to { width: var(--progress-width); }
+  }
+
+  .progress-bar {
+    animation: progressFill 1.5s ease-out;
+  }
+
+  /* Glow effects */
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Animated underline */
+  .nav-link {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient-accent);
+    transform: translateX(-100%);
+    transition: var(--transition-smooth);
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    transform: translateX(0);
   }
 }
