@@ -1,0 +1,221 @@
+import { useState } from "react";
+import { Mail, Phone, MapPin, Send, MessageCircle, ExternalLink, Github, Linkedin, Instagram, Twitter } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
+
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+  const { toast } = useToast();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission
+    toast({
+      title: "Message Sent!",
+      description: "Thank you for your message. I'll get back to you soon!",
+    });
+    setFormData({ name: "", email: "", message: "" });
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const socialLinks = [
+    { name: "LinkedIn", icon: Linkedin, href: "#", color: "from-blue-600 to-blue-700" },
+    { name: "GitHub", icon: Github, href: "#", color: "from-gray-700 to-gray-900" },
+    { name: "Twitter", icon: Twitter, href: "#", color: "from-blue-400 to-blue-600" },
+    { name: "Instagram", icon: Instagram, href: "#", color: "from-pink-500 to-purple-600" },
+  ];
+
+  return (
+    <div className="min-h-screen pt-24 pb-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-12 animate-fade-in">
+          <h1 className="text-4xl sm:text-5xl font-bold gradient-text mb-4">Contact</h1>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Let's connect and create something amazing together
+          </p>
+        </div>
+
+        {/* Let's Collaborate Section */}
+        <div className="mb-16 animate-fade-in">
+          <div className="glass-card p-8 rounded-2xl text-center max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold gradient-text mb-4">Let's Collaborate!</h2>
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+              I'm always open to <span className="text-primary font-semibold">new opportunities</span>, 
+              <span className="text-secondary font-semibold"> collaborations</span>, and 
+              <span className="text-accent font-semibold"> exciting projects</span>.
+              Let's build something amazing together!
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button className="glow-primary group">
+                <Mail className="h-4 w-4 mr-2 group-hover:scale-110 transition-transform" />
+                Get In Touch
+              </Button>
+              <Button variant="outline" asChild className="hover:glow-primary">
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="h-4 w-4 mr-2" />
+                  Connect on LinkedIn
+                  <ExternalLink className="h-3 w-3 ml-2" />
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Let's Connect Section */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-center gradient-text mb-8">Let's Connect</h2>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Contact Form */}
+            <div className="glass-card p-8 rounded-2xl animate-slide-up">
+              <h3 className="text-xl font-bold text-foreground mb-6">Send me a message</h3>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <Input
+                    type="text"
+                    name="name"
+                    placeholder="Your full name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                    className="bg-muted/20 border-border focus:border-primary"
+                  />
+                </div>
+                <div>
+                  <Input
+                    type="email"
+                    name="email"
+                    placeholder="your.email@example.com"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                    className="bg-muted/20 border-border focus:border-primary"
+                  />
+                </div>
+                <div>
+                  <Textarea
+                    name="message"
+                    placeholder="Tell me about your project or how we can collaborate..."
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                    rows={4}
+                    className="bg-muted/20 border-border focus:border-primary resize-none"
+                  />
+                </div>
+                <div className="flex items-center space-x-2">
+                  <input type="checkbox" id="urgent" className="rounded" />
+                  <label htmlFor="urgent" className="text-sm text-muted-foreground">
+                    Mark as urgent if it requires your message!
+                  </label>
+                </div>
+                <Button type="submit" className="w-full glow-primary group">
+                  <Send className="h-4 w-4 mr-2 group-hover:translate-x-1 transition-transform" />
+                  Send Message
+                </Button>
+              </form>
+            </div>
+
+            {/* Right Column */}
+            <div className="space-y-8">
+              {/* Quick Chat on WhatsApp */}
+              <div className="glass-card p-6 rounded-2xl text-center animate-slide-up">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center">
+                  <MessageCircle className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-lg font-bold text-foreground mb-2">Quick Chat on WhatsApp</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Need a quick response? Let's chat directly on WhatsApp!
+                </p>
+                <Button className="bg-green-600 hover:bg-green-700 text-white">
+                  <MessageCircle className="h-4 w-4 mr-2" />
+                  Chat on WhatsApp
+                </Button>
+              </div>
+
+              {/* Contact Information */}
+              <div className="glass-card p-6 rounded-2xl animate-slide-up">
+                <h3 className="text-lg font-bold text-foreground mb-4">Contact Information</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <Mail className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span className="text-sm text-muted-foreground">vishalkadalagi@gmail.com</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <ExternalLink className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span className="text-sm text-muted-foreground">vishalkadalagi.vercel.app</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Phone className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span className="text-sm text-muted-foreground">+91 63604-85056</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <MapPin className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span className="text-sm text-muted-foreground">Belagavi, Karnataka, India</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Follow Me Section */}
+        <div className="mb-16 animate-fade-in">
+          <div className="glass-card p-8 rounded-2xl text-center">
+            <h3 className="text-2xl font-bold gradient-text mb-6">Follow Me</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <Button
+                    key={social.name}
+                    variant="outline"
+                    asChild
+                    className="h-auto p-4 hover:scale-105 transition-all duration-300 group"
+                  >
+                    <a href={social.href} target="_blank" rel="noopener noreferrer">
+                      <div className="flex flex-col items-center space-y-2">
+                        <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${social.color} flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                          <Icon className="h-6 w-6 text-white" />
+                        </div>
+                        <span className="text-sm font-medium">{social.name}</span>
+                      </div>
+                    </a>
+                  </Button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        {/* Availability Section */}
+        <div className="text-center animate-fade-in">
+          <div className="glass-card p-8 rounded-2xl max-w-2xl mx-auto">
+            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center">
+              <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
+            </div>
+            <h3 className="text-xl font-bold gradient-text mb-2">Available for new opportunities</h3>
+            <p className="text-muted-foreground">
+              I'm currently open to internships, freelance projects, and collaboration opportunities.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Contact;
