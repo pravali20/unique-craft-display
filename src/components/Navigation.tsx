@@ -25,7 +25,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="text-xl font-bold gradient-text hover:scale-105 transition-transform">
-            Vishal Kadalagi
+            Pravalika Koneti
           </Link>
 
           {/* Desktop Navigation */}
