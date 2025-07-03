@@ -31,10 +31,8 @@ const Contact = () => {
   };
 
   const socialLinks = [
-    { name: "LinkedIn", icon: Linkedin, href: "#", color: "from-blue-600 to-blue-700" },
-    { name: "GitHub", icon: Github, href: "#", color: "from-gray-700 to-gray-900" },
-    { name: "Twitter", icon: Twitter, href: "#", color: "from-blue-400 to-blue-600" },
-    { name: "Instagram", icon: Instagram, href: "#", color: "from-pink-500 to-purple-600" },
+    { name: "LinkedIn", icon: Linkedin, href: "www.linkedin.com/in/pravalika-koneti-8a4763284", color: "from-blue-600 to-blue-700" },
+    { name: "GitHub", icon: Github, href: "https://github.com/pravali20", color: "from-gray-700 to-gray-900" },
   ];
 
   return (
@@ -64,7 +62,7 @@ const Contact = () => {
                 Get In Touch
               </Button>
               <Button variant="outline" asChild className="hover:glow-primary">
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <a href="www.linkedin.com/in/pravalika-koneti-8a4763284" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-4 w-4 mr-2" />
                   Connect on LinkedIn
                   <ExternalLink className="h-3 w-3 ml-2" />
@@ -131,20 +129,8 @@ const Contact = () => {
 
             {/* Right Column */}
             <div className="space-y-8">
-              {/* Quick Chat on WhatsApp */}
-              <div className="glass-card p-6 rounded-2xl text-center animate-slide-up">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center">
-                  <MessageCircle className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-lg font-bold text-foreground mb-2">Quick Chat on WhatsApp</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Need a quick response? Let's chat directly on WhatsApp!
-                </p>
-                <Button className="bg-green-600 hover:bg-green-700 text-white">
-                  <MessageCircle className="h-4 w-4 mr-2" />
-                  Chat on WhatsApp
-                </Button>
-              </div>
+        
+            
 
               {/* Contact Information */}
               <div className="glass-card p-6 rounded-2xl animate-slide-up">
@@ -152,19 +138,16 @@ const Contact = () => {
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <Mail className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">vishalkadalagi@gmail.com</span>
+                    <span className="text-sm text-muted-foreground">pravalikakoneti20@gmail.com</span>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <ExternalLink className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">vishalkadalagi.vercel.app</span>
-                  </div>
+               
                   <div className="flex items-center space-x-3">
                     <Phone className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">+91 63604-85056</span>
+                    <span className="text-sm text-muted-foreground">+91 6304999297</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <MapPin className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">Belagavi, Karnataka, India</span>
+                    <span className="text-sm text-muted-foreground">Anakapalle, Andhra Pradesh, India</span>
                   </div>
                 </div>
               </div>
