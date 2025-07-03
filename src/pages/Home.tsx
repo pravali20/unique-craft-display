@@ -11,7 +11,7 @@ const Home = () => {
           {/* Hero Content */}
           <div className="space-y-6">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-              Hi, I'm <span className="gradient-text">Vishal</span> —{" "}
+              Hi, I'm <span className="gradient-text">Pravalika</span> —{" "}
               <span className="gradient-text">Engineering Student</span> &{" "}
               <span className="gradient-text">Developer</span>.
             </h1>
