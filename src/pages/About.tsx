@@ -3,26 +3,26 @@ import { GraduationCap, MapPin, Calendar, User } from "lucide-react";
 const About = () => {
   const educationData = [
     {
-      period: "2023–Present",
-      degree: "BE (CSE)",
-      institution: "KLE Dr. M. S. Sheshgiri College of Engineering & Technology, Belagavi",
-      description: "Currently pursuing Bachelor of Engineering in Computer Science",
+      period: "2022–Present",
+      degree: "Artificial Intelligence and DataScience",
+      institution: "Vignan's Institute of Information Technology, Duvvada",
+      description: "Currently pursuing Bachelor of Engineering in AI&DS",
       color: "from-blue-500 to-cyan-500",
       icon: "🎓"
     },
     {
-      period: "2021–2023",
-      degree: "Diploma in CS",
-      institution: "Motichand Lengade Bharatesh Polytechnic, Belagavi",
-      description: "Completed Diploma in Computer Science with focus on programming fundamentals",
+      period: "2020–2022",
+      degree: "Intermediate",
+      institution: "Sri Chaitanya Junior College",
+      description: "Completed Intermediate(MPC) with 97 %",
       color: "from-purple-500 to-pink-500",
       icon: "📚"
     },
     {
-      period: "2010–2020",
-      degree: "10th Grade (CBSE)",
-      institution: "Shree Shankarling Model School, Chikalgudd, Hukkeri, Belagavi",
-      description: "Completed secondary education with strong foundation in mathematics and science",
+      period: "2019–2020",
+      degree: "10th Grade (SSC)",
+      institution: "Vasavi Bala Vihar English Medium School, Anakapalli",
+      description: "Completed secondary Education with 99%",
       color: "from-green-500 to-teal-500",
       icon: "🏫"
     }
@@ -50,24 +50,21 @@ const About = () => {
               
               <div className="space-y-6">
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  I'm <span className="text-primary font-semibold">Vishal Kadalagi</span>, a passionate engineering student and tech 
-                  explorer based in Belagavi, Karnataka. My journey in technology 
-                  started with curiosity and has evolved into a deep passion for 
-                  creating innovative solutions that make a difference.
+                  I'm <span className="text-primary font-semibold">Pravalika Koneti </span>, An enthusiastic engineering student, passionate coder, and creative thinker from Andhra Pradesh.
+
+                  My journey into the world of technology began with curiosity — the urge to understand how things work. 
+                  Over time, that curiosity evolved into a strong passion for building smart and meaningful solutions through code.
                 </p>
                 
                 <p className="text-lg leading-relaxed text-muted-foreground">
                   I specialize in <span className="text-primary font-semibold">web development</span> and have experience with 
                   various technologies including <span className="text-secondary font-semibold">Python</span>, <span className="text-accent font-semibold">JavaScript</span>, <span className="text-primary font-semibold">Firebase</span>, and 
-                  emerging fields like <span className="text-secondary font-semibold">Machine Learning</span> and <span className="text-accent font-semibold">IoT</span>. I believe in 
-                  continuous learning and staying updated with the latest tech 
-                  trends.
+                  emerging fields like <span className="text-secondary font-semibold">Machine Learning, </span> and <span className="text-accent font-semibold">IoT</span>.  I’m always eager to learn, experiment with new tools, and stay updated with emerging tech trends.
                 </p>
                 
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  When I'm not coding, you'll find me exploring new 
-                  technologies, participating in hackathons, or working on 
-                  innovative projects that solve real-world problems. 🚀
+               Professionally, I focus on growing as a developer by working on real-world projects, attending hackathons, collaborating with diverse teams,
+                  and continuously improving my skills to contribute effectively to the tech industry. 🚀
                 </p>
               </div>
             </div>
