@@ -3,67 +3,41 @@ import { Trophy, Medal, Star, Target, Calendar, Award } from "lucide-react";
 const Achievements = () => {
   const achievements = [
     {
-      title: "Best Project Award",
+      title: "Excellence Award",
       category: "Academic Excellence",
-      date: "2023",
-      description: "Awarded for outstanding final year project on Smart Home Automation using IoT and machine learning algorithms.",
+      date: "2024",
+      description: "Academic Excellence Award presented by Vizag Development Council and VIIT, awarded by IPS Dr. Shankhabrata Bagchi.",
       icon: Trophy,
       color: "from-yellow-500 to-orange-500",
-      impact: "Project implemented in 5+ homes"
+      impact: "Honored for outstanding academic performance"
     },
     {
-      title: "Hackathon Winner",
+      title: "Hackathon",
       category: "Competition",
-      date: "2023",
-      description: "First place in 48-hour hackathon for developing an AI-powered study companion app for students.",
+      date: "2025",
+      description: "Selected and participated in a 24-hour Hackathon organized by Google Developer Groups (GDG) and Women Techmakers (WTM) in 2025.",
       icon: Medal,
       color: "from-purple-500 to-pink-500",
-      impact: "500+ students benefited"
+      impact: "Developed an AI-based solution for Drug Discovery"
     },
     {
       title: "Dean's List",
       category: "Academic Excellence",
-      date: "2022-2023",
+      date: "2022-present",
       description: "Maintained top 5% academic performance throughout the academic year with 9.2+ CGPA.",
       icon: Star,
       color: "from-blue-500 to-cyan-500",
       impact: "Top 5% of class"
     },
+    
     {
-      title: "Open Source Contributor",
-      category: "Community",
+      title: "Active Tech Learner",
+      category: "Professional development",
       date: "2023",
-      description: "Contributed to 10+ open source projects with 50+ merged pull requests and helped fix critical bugs.",
-      icon: Target,
-      color: "from-green-500 to-teal-500",
-      impact: "50+ contributions"
-    },
-    {
-      title: "Technical Blog Writer",
-      category: "Knowledge Sharing",
-      date: "2022-Present",
-      description: "Published 15+ technical articles on web development and machine learning with 10K+ total views.",
-      icon: Award,
-      color: "from-indigo-500 to-purple-500",
-      impact: "10K+ readers reached"
-    },
-    {
-      title: "Coding Competition Champion",
-      category: "Programming",
-      date: "2023",
-      description: "Won inter-college coding competition by solving complex algorithmic problems in record time.",
+      description: "Attend webinars, workshops, and coding sessions regularly to stay updated on emerging trends in AI, web technologies, and cloud computing.",
       icon: Trophy,
       color: "from-red-500 to-pink-500",
-      impact: "Competed against 200+ participants"
-    },
-    {
-      title: "Innovation Excellence Award",
-      category: "Innovation",
-      date: "2023",
-      description: "Recognized for developing innovative solutions in machine learning and IoT applications.",
-      icon: Star,
-      color: "from-cyan-500 to-blue-500",
-      impact: "Recognized by industry experts"
+      impact: "Strengthened technical skills through consistent engagement in tech events and hands-on sessions."
     },
     {
       title: "Community Mentor",
@@ -72,15 +46,25 @@ const Achievements = () => {
       description: "Mentored 25+ junior students in programming and helped them secure internships at top companies.",
       icon: Award,
       color: "from-orange-500 to-red-500",
-      impact: "25+ students mentored"
-    }
+      impact: "Guided multiple batches of junior students in programming and career readiness."
+    },
+    {
+  title: "Discipline Coordinator",
+  category: "Leadership",
+  date: "2023",
+  description: "Served as Discipline Coordinator during college events, ensuring smooth conduct, managing crowd flow, and upholding event protocols.",
+  icon: ShieldCheck,  // (Alternative: UserCheck, Gavel)
+  color: "from-green-500 to-blue-500",
+  impact: "Managed discipline and logistics for events with 200+ attendees"
+}
+
   ];
 
   const stats = [
-    { label: "Awards Won", value: "8+", icon: Trophy },
+    { label: "Certifications & Awards Won", value: "10+", icon: Trophy },
     { label: "Students Mentored", value: "25+", icon: Target },
-    { label: "Projects Completed", value: "15+", icon: Star },
-    { label: "Recognition Years", value: "3+", icon: Medal }
+    { label: "Projects Completed", value: "5+", icon: Star },
+    { label: "Consistent Excellence", value: "3+", icon: Medal }
   ];
 
   return (
@@ -151,38 +135,8 @@ const Achievements = () => {
           })}
         </div>
 
-        {/* Recognition Timeline */}
-        <div className="mt-16 animate-fade-in">
-          <div className="glass-card p-8 rounded-2xl">
-            <h3 className="text-2xl font-bold gradient-text mb-8 text-center">Recognition Timeline</h3>
-            <div className="space-y-6">
-              {[
-                { year: "2023", achievements: ["Best Project Award", "Hackathon Winner", "Innovation Excellence"] },
-                { year: "2022", achievements: ["Dean's List", "Technical Blog Writer", "Community Mentor"] },
-                { year: "2021", achievements: ["Academic Excellence", "First Programming Contest"] }
-              ].map((yearData, index) => (
-                <div key={yearData.year} className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white font-bold">
-                    {yearData.year}
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex flex-wrap gap-2">
-                      {yearData.achievements.map((achievement) => (
-                        <span
-                          key={achievement}
-                          className="px-3 py-1 text-xs font-medium bg-muted/20 text-foreground rounded-full border border-border"
-                        >
-                          {achievement}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
+    
+         
         {/* Goals Section */}
         <div className="mt-12 text-center animate-fade-in">
           <div className="glass-card p-8 rounded-2xl max-w-4xl mx-auto">
