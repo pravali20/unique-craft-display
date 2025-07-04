@@ -1,12 +1,11 @@
-import { Github, Linkedin, Instagram, Twitter } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 import { Button } from "./ui/button";
 
 const SocialLinks = () => {
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Github, href: "https://github.com/pravali20", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/pravalika-koneti-8a4763284", label: "LinkedIn" },
+  
   ];
 
   return (
