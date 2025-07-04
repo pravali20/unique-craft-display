@@ -64,7 +64,7 @@ const Home = () => {
                 Download my latest resume
               </p>
               <a
-    href="/Pravalika_Koneti_Resume.pdf"
+    href="/Pravalika Koneti Resume.pdf"
     download
     target="_blank"
     rel="noopener noreferrer"
