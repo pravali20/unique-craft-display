@@ -56,11 +56,7 @@ const Contact = () => {
               <span className="text-accent font-semibold"> exciting projects</span>.
               Let's build something amazing together!
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="glow-primary group">
-                <Mail className="h-4 w-4 mr-2 group-hover:scale-110 transition-transform" />
-                Get In Touch
-              </Button>
+            <div className="flex justify-center">
               <Button variant="outline" asChild className="hover:glow-primary">
                 <a href="https://www.linkedin.com/in/pravalika-koneti-8a4763284" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-4 w-4 mr-2" />

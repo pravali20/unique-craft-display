@@ -61,7 +61,7 @@ const Achievements = () => {
   ];
 
   const stats = [
-    { label: "Certifications & Awards Won", value: "10+", icon: Trophy },
+    { label: "Certifications & Awards Won", value: "8+", icon: Trophy },
     { label: "Students Mentored", value: "25+", icon: Target },
     { label: "Projects Completed", value: "5+", icon: Star },
     { label: "Consistent Excellence", value: "3+", icon: Medal }
