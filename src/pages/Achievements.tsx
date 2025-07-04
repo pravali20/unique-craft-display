@@ -1,4 +1,4 @@
-import { Trophy, Medal, Star, Target, Calendar, Award } from "lucide-react";
+import { Trophy, Medal, Star, Target, Calendar, Award, ShieldCheck } from "lucide-react";
 
 const Achievements = () => {
   const achievements = [

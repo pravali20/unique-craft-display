@@ -6,7 +6,7 @@ const Projects = () => {
     {
       title: "Lane Line Detection",
       description: "A Flask-based app using YOLOv8 and OpenCV for object and lane detection in driving videos.",
-      tech: [Python, Flask, YOLOv8 (Ultralytics), OpenCV, HTML, NumPy],
+      tech: ["Python", "Flask", "YOLOv8", "Ultralytics", "OpenCV", "HTML", "NumPy"],
       image: "🚗",
       color: "from-blue-500 to-cyan-500",
     
@@ -64,16 +64,7 @@ const Projects = () => {
                   {project.image}
                 </div>
                 <div className="flex space-x-2">
-                  <Button variant="ghost" size="sm" asChild className="hover:text-primary">
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <Github className="h-4 w-4" />
-                    </a>
-                  </Button>
-                  <Button variant="ghost" size="sm" asChild className="hover:text-primary">
-                    <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="h-4 w-4" />
-                    </a>
-                  </Button>
+                  {/* Project links would go here when available */}
                 </div>
               </div>
 
