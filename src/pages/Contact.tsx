@@ -159,7 +159,7 @@ const Contact = () => {
         <div className="mb-16 animate-fade-in">
           <div className="glass-card p-8 rounded-2xl text-center">
             <h3 className="text-2xl font-bold gradient-text mb-6">Follow Me</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="flex justify-center items-center gap-6">
               {socialLinks.map((social) => {
                 const Icon = social.icon;
                 return (
