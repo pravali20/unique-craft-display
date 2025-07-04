@@ -4,59 +4,39 @@ import { Button } from "@/components/ui/button";
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce platform built with React, Node.js, and MongoDB. Features include user authentication, product catalog, shopping cart, and payment integration.",
-      tech: ["React", "Node.js", "MongoDB", "Express"],
-      image: "🛒",
+      title: "Lane Line Detection",
+      description: "A Flask-based app using YOLOv8 and OpenCV for object and lane detection in driving videos.",
+      tech: [Python, Flask, YOLOv8 (Ultralytics), OpenCV, HTML, NumPy],
+      image: "🚗",
       color: "from-blue-500 to-cyan-500",
-      github: "#",
-      demo: "#"
+    
     },
     {
-      title: "Task Management App",
-      description: "A productivity app for managing tasks and projects with real-time collaboration features. Built using React and Firebase.",
-      tech: ["React", "Firebase", "Tailwind CSS"],
-      image: "📋",
+      title: "Interactive elearning Module",
+      description: "Developed animated countdowns,quiz assessments with scoring, and feedback systems.",
+      tech: ["HTML5", "CSS3", "JavaScript"],
+      image: "💻",
       color: "from-purple-500 to-pink-500",
-      github: "#",
-      demo: "#"
+      
     },
     {
-      title: "Weather Dashboard",
-      description: "A responsive weather application that displays current weather and forecasts using OpenWeather API. Features location-based weather and beautiful visualizations.",
-      tech: ["JavaScript", "API Integration", "CSS3"],
-      image: "🌤️",
+      title: "AI Portfolio Website",
+      description: "A modern personal portfolio built using React, Tailwind, and Framer Motion to showcase AI skills.",
+      tech: ["React", "Tailwind CSS", "Framer Motion"],
+      image: "🌐",
       color: "from-green-500 to-teal-500",
-      github: "#",
-      demo: "#"
+      
     },
+    
     {
-      title: "ML Image Classifier",
-      description: "A machine learning project that classifies images using Python and TensorFlow. Includes a web interface for easy image uploads and predictions.",
-      tech: ["Python", "TensorFlow", "Flask", "ML"],
-      image: "🤖",
-      color: "from-orange-500 to-red-500",
-      github: "#",
-      demo: "#"
-    },
-    {
-      title: "Portfolio Website",
-      description: "A responsive portfolio website showcasing my projects and skills. Built with modern web technologies and optimized for performance.",
-      tech: ["React", "TypeScript", "Tailwind CSS"],
-      image: "💼",
+      title: "Accelerating Drug Discovery",
+      description: "A generative AI project built during a 24-hour hackathon using Flask and OpenAI APIs.",
+      tech: ["Python", "Flask", "OpenAI API", "HTML/CSS"],
+      image: "🧬",
       color: "from-indigo-500 to-purple-500",
-      github: "#",
-      demo: "#"
+     
     },
-    {
-      title: "IoT Home Automation",
-      description: "Smart home automation system using Arduino and IoT sensors. Controls lighting, temperature, and security systems through a mobile app.",
-      tech: ["Arduino", "IoT", "Mobile App", "C++"],
-      image: "🏠",
-      color: "from-cyan-500 to-blue-500",
-      github: "#",
-      demo: "#"
-    }
+   
   ];
 
   return (
