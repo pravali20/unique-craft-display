@@ -20,9 +20,8 @@ const Skills = () => {
       color: "from-blue-500 to-cyan-500",
       skills: [
         { name: "C", level: 85 },
-        { name: "C++", level: 80 },
-        { name: "Python", level: 70 },
-        { name: "JavaScript", level: 75 },
+        { name: "Python", level: 90 },
+        { name: "JavaScript", level: 65 },
         { name: "HTML/CSS", level: 90 },
       ]
     },
@@ -33,8 +32,7 @@ const Skills = () => {
       skills: [
         { name: "GitHub", level: 85 },
         { name: "VS Code", level: 90 },
-        { name: "Firebase", level: 80 },
-        { name: "Jupyter Notebook", level: 75 },
+        { name: "Jupyter Notebook", level: 80 },
       ]
     },
     {
@@ -55,6 +53,7 @@ const Skills = () => {
         { name: "Node.js", level: 50 },
         { name: "DevOps", level: 40 },
         { name: "Advanced ML", level: 55 },
+        { name: "AWS Cloud Services", level: 40 },
       ]
     }
   ];
