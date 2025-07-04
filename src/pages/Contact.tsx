@@ -157,7 +157,7 @@ const Contact = () => {
 
         {/* Follow Me Section */}
         <div className="mb-16 animate-fade-in">
-          <div className="glass-card p-8 rounded-2xl text-center">
+          <div className="glass-card p-6 rounded-2xl text-center max-w-md mx-auto">
             <h3 className="text-2xl font-bold gradient-text mb-6">Follow Me</h3>
             <div className="flex justify-center items-center gap-6">
               {socialLinks.map((social) => {
