@@ -31,7 +31,7 @@ const Contact = () => {
   };
 
   const socialLinks = [
-    { name: "LinkedIn", icon: Linkedin, href: "www.linkedin.com/in/pravalika-koneti-8a4763284", color: "from-blue-600 to-blue-700" },
+    { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/pravalika-koneti-8a4763284", color: "from-blue-600 to-blue-700" },
     { name: "GitHub", icon: Github, href: "https://github.com/pravali20", color: "from-gray-700 to-gray-900" },
   ];
 
@@ -62,7 +62,7 @@ const Contact = () => {
                 Get In Touch
               </Button>
               <Button variant="outline" asChild className="hover:glow-primary">
-                <a href="www.linkedin.com/in/pravalika-koneti-8a4763284" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/pravalika-koneti-8a4763284" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-4 w-4 mr-2" />
                   Connect on LinkedIn
                   <ExternalLink className="h-3 w-3 ml-2" />
