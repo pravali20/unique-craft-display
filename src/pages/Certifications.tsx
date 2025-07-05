@@ -193,26 +193,6 @@ const Certifications = () => {
           ))}
         </div>
 
-        {/* Stats Section */}
-        <div className="mt-12 animate-fade-in">
-          <div className="glass-card p-8 rounded-2xl">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div className="space-y-2">
-                <div className="text-3xl font-bold gradient-text">6+</div>
-                <p className="text-sm text-muted-foreground">Certifications Earned</p>
-              </div>
-              <div className="space-y-2">
-                <div className="text-3xl font-bold gradient-text">500+</div>
-                <p className="text-sm text-muted-foreground">Hours of Learning</p>
-              </div>
-              <div className="space-y-2">
-                <div className="text-3xl font-bold gradient-text">15+</div>
-                <p className="text-sm text-muted-foreground">Skills Mastered</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Learning Philosophy */}
         <div className="mt-12 text-center animate-fade-in">
           <div className="glass-card p-8 rounded-2xl max-w-4xl mx-auto">
