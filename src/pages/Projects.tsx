@@ -94,13 +94,24 @@ const Projects = () => {
         {/* Call to Action */}
         <div className="mt-12 text-center animate-fade-in">
           <div className="glass-card p-8 rounded-2xl max-w-2xl mx-auto">
+            <div className="flex justify-center mb-6">
+              <div className="w-24 h-24 rounded-2xl overflow-hidden glass-card p-1">
+                <img 
+                  src="/lovable-uploads/028cb17b-3292-44df-811d-293cb05c15c4.png" 
+                  alt="Pravalika Koneti"
+                  className="w-full h-full object-cover rounded-xl"
+                />
+              </div>
+            </div>
             <h3 className="text-2xl font-bold gradient-text mb-4">Want to Collaborate?</h3>
             <p className="text-lg text-muted-foreground mb-6">
               I'm always excited to work on new projects and collaborate with like-minded developers. 
               Let's build something amazing together!
             </p>
-            <Button className="glow-primary">
-              <a href="mailto:your.email@example.com">Get In Touch</a>
+            <Button className="glow-primary" asChild>
+              <a href="https://www.linkedin.com/in/pravalika-koneti-8a4763284" target="_blank" rel="noopener noreferrer">
+                Get In Touch
+              </a>
             </Button>
           </div>
         </div>
