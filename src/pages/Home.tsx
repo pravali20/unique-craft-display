@@ -23,7 +23,7 @@ const Home = () => {
               <div className="w-40 h-40 sm:w-48 sm:h-48 rounded-3xl glass-card p-1 glow-primary">
                 <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl flex items-center justify-center p-2">
                   <img
-                    src="/lovable-uploads/c24cb7aa-b8a1-49ee-8355-4e74311c6265.png"
+                    src="/lovable-uploads/6e4445dc-678c-4f4c-8a14-ac9c6b8a9315.png"
                     alt="Pravalika Koneti"
                     className="max-w-full max-h-full object-contain rounded-xl"
                   />
