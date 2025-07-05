@@ -25,7 +25,7 @@ const Home = () => {
                   <img
                     src="/lovable-uploads/c24cb7aa-b8a1-49ee-8355-4e74311c6265.png"
                     alt="Pravalika Koneti"
-                    className="w-full h-full object-cover rounded-2xl"
+                    className="w-full h-full object-contain rounded-2xl"
                   />
                 </div>
               </div>
