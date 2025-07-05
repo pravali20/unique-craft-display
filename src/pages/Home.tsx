@@ -18,19 +18,11 @@ const Home = () => {
           </div>
 
    {/* Profile Image */}
-<div className="flex justify-center animate-float">
-  <div className="relative">
-    <div className="w-40 h-40 sm:w-48 sm:h-48 rounded-3xl glass-card p-1 glow-primary">
-      <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl flex items-center justify-center p-2">
-        <img
-          src="/lovable-uploads/c24cb7aa-b8a1-49ee-8355-4e74311c6265.png" // ✅ your latest image
-          alt="Pravalika Koneti"
-          className="w-full h-full object-contain rounded-xl" // ✅ Key class to fix image fit
-        />
-      </div>
-    </div>
-  </div>
-</div>
+<img
+  src="/lovable-uploads/c24cb7aa-b8a1-49ee-8355-4e74311c6265.png"
+  alt="Pravalika Koneti"
+  className="w-full h-full object-contain rounded-xl"
+/>
 
           {/* Social Links */}
           <div className="animate-slide-up">
