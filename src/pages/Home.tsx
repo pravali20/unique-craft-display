@@ -23,10 +23,10 @@ const Home = () => {
               <div className="w-40 h-40 sm:w-48 sm:h-48 rounded-3xl glass-card p-1 glow-primary">
                 <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl flex items-center justify-center">
                   <img
-          src="/images/prav.png" // 👈 Update this path
-          alt="Pravalika Koneti"
-          className="w-full h-full object-cover rounded-2xl"
-        />
+                    src="/lovable-uploads/028cb17b-3292-44df-811d-293cb05c15c4.png"
+                    alt="Pravalika Koneti"
+                    className="w-full h-full object-cover rounded-2xl"
+                  />
                 </div>
               </div>
             </div>
