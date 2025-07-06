@@ -1,3 +1,4 @@
+
 import { Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SocialLinks from "@/components/SocialLinks";
@@ -17,22 +18,20 @@ const Home = () => {
             </h1>
           </div>
 
-   {/* Profile Image */}
-{/* Profile Image */}
-<div className="flex justify-center animate-float">
-  <div className="relative">
-    <div className="w-40 h-40 sm:w-48 sm:h-48 rounded-3xl glass-card p-1 glow-primary">
-      <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl flex items-center justify-center p-2">
-        <img
-          src="/lovable-uploads/c24cb7aa-b8a1-49ee-8355-4e74311c6265.png"
-          alt="Pravalika Koneti"
-          className="max-w-full max-h-full object-contain rounded-xl"
-        />
-      </div>
-    </div>
-  </div>
-</div>
-
+          {/* Profile Image */}
+          <div className="flex justify-center animate-float">
+            <div className="relative">
+              <div className="w-40 h-40 sm:w-48 sm:h-48 rounded-3xl glass-card p-1 glow-primary">
+                <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl overflow-hidden">
+                  <img
+                    src="/lovable-uploads/c24cb7aa-b8a1-49ee-8355-4e74311c6265.png"
+                    alt="Pravalika Koneti"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* Social Links */}
           <div className="animate-slide-up">
@@ -66,16 +65,16 @@ const Home = () => {
                 Download my latest resume
               </p>
               <a
-    href="/Pravalika Koneti Resume.pdf"
-    download
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <Button variant="outline" size="sm" className="w-full">
-      Download PDF
-    </Button>
-  </a>
-</div>
+                href="/Pravalika Koneti Resume.pdf"
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="outline" size="sm" className="w-full">
+                  Download PDF
+                </Button>
+              </a>
+            </div>
 
             <Link to="/skills" className="glass-card p-6 rounded-2xl hover:scale-105 transition-all group">
               <div className="text-3xl mb-4">⚡</div>
