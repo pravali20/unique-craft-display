@@ -111,71 +111,67 @@ const Contact = () => {
             {/* Contact Form */}
             <div className="glass-card p-8 rounded-2xl animate-slide-up">
               <h3 className="text-xl font-bold text-foreground mb-6">Send me a message</h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <Input
-                    type="text"
-                    name="name"
-                    placeholder="Your full name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    className="bg-muted/20 border-border focus:border-primary"
-                  />
-                </div>
-                <div>
-                  <Input
-                    type="email"
-                    name="email"
-                    placeholder="your.email@example.com"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="bg-muted/20 border-border focus:border-primary"
-                  />
-                </div>
-                <div>
-                  <Textarea
-                    name="message"
-                    placeholder="Tell me about your project or how we can collaborate..."
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                    rows={4}
-                    className="bg-muted/20 border-border focus:border-primary resize-none"
-                  />
-                </div>
-                <div className="flex items-center space-x-2">
-                  <input 
-                    type="checkbox" 
-                    id="urgent" 
-                    name="isUrgent"
-                    checked={formData.isUrgent}
-                    onChange={handleInputChange}
-                    className="rounded" 
-                  />
-                  <label htmlFor="urgent" className="text-sm text-muted-foreground">
-                    Mark as urgent if it requires immediate attention!
-                  </label>
-                </div>
-                <Button 
-                  type="submit" 
-                  disabled={isLoading}
-                  className="w-full glow-primary group"
-                >
-                  {isLoading ? (
-                    <>
-                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      <Send className="h-4 w-4 mr-2 group-hover:translate-x-1 transition-transform" />
-                      Send Message
-                    </>
-                  )}
-                </Button>
-              </form>
+              <form
+  action="https://formsubmit.co/pravalikakoneti20@gmail.com"
+  method="POST"
+  className="space-y-6"
+>
+  <div>
+    <input
+      type="text"
+      name="name"
+      placeholder="Your full name"
+      required
+      className="bg-muted/20 border-border focus:border-primary w-full p-2 rounded"
+    />
+  </div>
+  <div>
+    <input
+      type="email"
+      name="email"
+      placeholder="your.email@example.com"
+      required
+      className="bg-muted/20 border-border focus:border-primary w-full p-2 rounded"
+    />
+  </div>
+  <div>
+    <textarea
+      name="message"
+      placeholder="Tell me about your project or how we can collaborate..."
+      required
+      rows={4}
+      className="bg-muted/20 border-border focus:border-primary resize-none w-full p-2 rounded"
+    />
+  </div>
+
+  <input type="hidden" name="_captcha" value="false" />
+
+  <div className="flex items-center space-x-2">
+    <input type="checkbox" id="urgent" name="urgent" className="rounded" />
+    <label htmlFor="urgent" className="text-sm text-muted-foreground">
+      Mark as urgent if it requires immediate attention!
+    </label>
+  </div>
+
+  <button
+    type="submit"
+    className="w-full glow-primary group bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+  >
+    <span className="inline-flex items-center">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-4 w-4 mr-2 group-hover:translate-x-1 transition-transform"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10l9-6 9 6-9 6-9-6z" />
+      </svg>
+      Send Message
+    </span>
+  </button>
+</form>
+
             </div>
 
             {/* Right Column */}
