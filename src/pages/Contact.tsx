@@ -9,24 +9,59 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: ""
+    message: "",
+    isUrgent: false
   });
+  const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. I'll get back to you soon!",
-    });
-    setFormData({ name: "", email: "", message: "" });
+    setIsLoading(true);
+
+    try {
+      // For now, we'll use a simple fetch to a mock endpoint
+      // You can replace this with your actual Supabase Edge Function call
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          isUrgent: formData.isUrgent,
+        }),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for your message. I'll get back to you soon!",
+        });
+        setFormData({ name: "", email: "", message: "", isUrgent: false });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again or contact me directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value, type } = e.target;
+    const checked = (e.target as HTMLInputElement).checked;
+    
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: type === 'checkbox' ? checked : value
     });
   };
 
@@ -111,14 +146,34 @@ const Contact = () => {
                   />
                 </div>
                 <div className="flex items-center space-x-2">
-                  <input type="checkbox" id="urgent" className="rounded" />
+                  <input 
+                    type="checkbox" 
+                    id="urgent" 
+                    name="isUrgent"
+                    checked={formData.isUrgent}
+                    onChange={handleInputChange}
+                    className="rounded" 
+                  />
                   <label htmlFor="urgent" className="text-sm text-muted-foreground">
-                    Mark as urgent if it requires your message!
+                    Mark as urgent if it requires immediate attention!
                   </label>
                 </div>
-                <Button type="submit" className="w-full glow-primary group">
-                  <Send className="h-4 w-4 mr-2 group-hover:translate-x-1 transition-transform" />
-                  Send Message
+                <Button 
+                  type="submit" 
+                  disabled={isLoading}
+                  className="w-full glow-primary group"
+                >
+                  {isLoading ? (
+                    <>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="h-4 w-4 mr-2 group-hover:translate-x-1 transition-transform" />
+                      Send Message
+                    </>
+                  )}
                 </Button>
               </form>
             </div>
