@@ -12,42 +12,51 @@ const Contact = () => {
     message: "",
     isUrgent: false
   });
+  const [webhookUrl, setWebhookUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!webhookUrl) {
+      toast({
+        title: "Error",
+        description: "Please enter your Zapier webhook URL",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsLoading(true);
 
     try {
-      // For now, we'll use a simple fetch to a mock endpoint
-      // You can replace this with your actual Supabase Edge Function call
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
+      const response = await fetch(webhookUrl, {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
+        mode: "no-cors",
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
           message: formData.message,
           isUrgent: formData.isUrgent,
+          timestamp: new Date().toISOString(),
+          triggered_from: window.location.origin,
         }),
       });
 
-      if (response.ok) {
-        toast({
-          title: "Message Sent!",
-          description: "Thank you for your message. I'll get back to you soon!",
-        });
-        setFormData({ name: "", email: "", message: "", isUrgent: false });
-      } else {
-        throw new Error('Failed to send message');
-      }
+      toast({
+        title: "Message Sent!",
+        description: "Your message was sent to Zapier. Please check your Zap's history to confirm it was triggered.",
+      });
+      setFormData({ name: "", email: "", message: "", isUrgent: false });
     } catch (error) {
+      console.error("Error triggering webhook:", error);
       toast({
         title: "Error",
-        description: "Failed to send message. Please try again or contact me directly.",
+        description: "Failed to send message. Please check the webhook URL and try again.",
         variant: "destructive",
       });
     } finally {
@@ -111,66 +120,82 @@ const Contact = () => {
             {/* Contact Form */}
             <div className="glass-card p-8 rounded-2xl animate-slide-up">
               <h3 className="text-xl font-bold text-foreground mb-6">Send me a message</h3>
-              <form
-  action="https://formsubmit.co/pravalikakoneti20@gmail.com"
-  method="POST"
-  className="space-y-6"
->
-  <div>
-    <input
-      type="text"
-      name="name"
-      placeholder="Your full name"
-      required
-      className="bg-muted/20 border-border focus:border-primary w-full p-2 rounded"
-    />
-  </div>
-  <div>
-    <input
-      type="email"
-      name="email"
-      placeholder="your.email@example.com"
-      required
-      className="bg-muted/20 border-border focus:border-primary w-full p-2 rounded"
-    />
-  </div>
-  <div>
-    <textarea
-      name="message"
-      placeholder="Tell me about your project or how we can collaborate..."
-      required
-      rows={4}
-      className="bg-muted/20 border-border focus:border-primary resize-none w-full p-2 rounded"
-    />
-  </div>
-
-  <input type="hidden" name="_captcha" value="false" />
-
-  <div className="flex items-center space-x-2">
-    <input type="checkbox" id="urgent" name="urgent" className="rounded" />
-    <label htmlFor="urgent" className="text-sm text-muted-foreground">
-      Mark as urgent if it requires immediate attention!
-    </label>
-  </div>
-
-  <button
-    type="submit"
-    className="w-full glow-primary group bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-  >
-    <span className="inline-flex items-center">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-4 w-4 mr-2 group-hover:translate-x-1 transition-transform"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10l9-6 9 6-9 6-9-6z" />
-      </svg>
-      Send Message
-    </span>
-  </button>
-</form>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <Input
+                    type="text"
+                    name="name"
+                    placeholder="Your full name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
+                <div>
+                  <Input
+                    type="email"
+                    name="email"
+                    placeholder="your.email@example.com"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
+                <div>
+                  <Textarea
+                    name="message"
+                    placeholder="Tell me about your project or how we can collaborate..."
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                    rows={4}
+                    className="resize-none"
+                  />
+                </div>
+                <div>
+                  <Input
+                    type="url"
+                    placeholder="Enter your Zapier webhook URL here..."
+                    value={webhookUrl}
+                    onChange={(e) => setWebhookUrl(e.target.value)}
+                    required
+                    className="border-2 border-dashed border-primary/50"
+                  />
+                  <p className="text-xs text-muted-foreground mt-2">
+                    Create a Zapier webhook trigger and paste the URL here to receive form submissions
+                  </p>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <input 
+                    type="checkbox" 
+                    id="urgent" 
+                    name="isUrgent" 
+                    checked={formData.isUrgent}
+                    onChange={handleInputChange}
+                    className="rounded" 
+                  />
+                  <label htmlFor="urgent" className="text-sm text-muted-foreground">
+                    Mark as urgent if it requires immediate attention!
+                  </label>
+                </div>
+                <Button
+                  type="submit"
+                  disabled={isLoading}
+                  className="w-full"
+                >
+                  {isLoading ? (
+                    <span className="inline-flex items-center">
+                      <div className="animate-spin h-4 w-4 mr-2 border-2 border-current border-t-transparent rounded-full"></div>
+                      Sending...
+                    </span>
+                  ) : (
+                    <span className="inline-flex items-center">
+                      <Send className="h-4 w-4 mr-2 group-hover:translate-x-1 transition-transform" />
+                      Send Message
+                    </span>
+                  )}
+                </Button>
+              </form>
 
             </div>
 
