@@ -53,32 +53,14 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Enhanced Profile Image */}
-          <div className="flex justify-center animate-bounce-in" style={{ animationDelay: '0.4s' }}>
-            <div className="relative group">
-              {/* Outer glow ring */}
-              <div className="absolute -inset-4 bg-gradient-accent rounded-full opacity-30 group-hover:opacity-50 transition-opacity duration-500 animate-pulse-glow"></div>
-              
-              {/* Main image container */}
-              <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64">
-                <div className="glass-card-intense p-2 rounded-full glow-intense hover-lift">
-                  <div className="w-full h-full bg-gradient-hero rounded-full overflow-hidden relative">
-                    <img
-                      src="/lovable-uploads/c24cb7aa-b8a1-49ee-8355-4e74311c6265.png"
-                      alt="Pravalika Koneti"
-                      className="w-full h-full animate-float-slow"
-                    />
-                    
-                    {/* Overlay gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-full"></div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Floating status indicator */}
-              <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-green-500 rounded-full border-4 border-background animate-pulse-glow flex items-center justify-center">
-                <div className="w-2 h-2 bg-white rounded-full"></div>
-              </div>
+          {/* Profile Image */}
+          <div className="flex justify-center">
+            <div className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden">
+              <img
+                src="/lovable-uploads/c24cb7aa-b8a1-49ee-8355-4e74311c6265.png"
+                alt="Pravalika Koneti"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
 
