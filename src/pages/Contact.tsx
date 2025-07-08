@@ -12,7 +12,7 @@ const Contact = () => {
     message: "",
     isUrgent: false
   });
-  const [webhookUrl, setWebhookUrl] = useState("");
+  const [webhookUrl, setWebhookUrl] = useState("https://hooks.zapier.com/hooks/catch/23699504/u3scy1d/");
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
