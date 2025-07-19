@@ -55,7 +55,7 @@ const Home = () => {
 
           {/* Profile Image */}
           <div className="flex justify-center">
-            <div className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden">
+            <div className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-xl overflow-hidden">
               <img
                 src="/lovable-uploads/c24cb7aa-b8a1-49ee-8355-4e74311c6265.png"
                 alt="Pravalika Koneti"
