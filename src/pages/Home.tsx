@@ -59,7 +59,7 @@ const Home = () => {
               <img
                 src="/lovable-uploads/c24cb7aa-b8a1-49ee-8355-4e74311c6265.png"
                 alt="Pravalika Koneti"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain scale-90"
               />
             </div>
           </div>
