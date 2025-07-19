@@ -57,20 +57,20 @@ const Home = () => {
           <div className="flex justify-center animate-bounce-in" style={{ animationDelay: '0.4s' }}>
             <div className="relative group">
               {/* Main image container */}
-              <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64">
-                <div className="glass-card-intense p-2 rounded-xl hover-lift">
-                  <div className="w-full h-full bg-gradient-hero rounded-xl overflow-hidden relative">
+              <div className="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72">
+                <div className="glass-card-intense p-3 rounded-2xl hover-lift">
+                  <div className="w-full h-full bg-gradient-hero rounded-2xl overflow-hidden relative">
                     <img
                       src="/lovable-uploads/c24cb7aa-b8a1-49ee-8355-4e74311c6265.png"
                       alt="Pravalika Koneti"
-                      className="w-full h-full object-contain scale-90 animate-float-slow glow-intense"
+                      className="w-full h-full object-cover object-top animate-float-slow glow-intense"
                       style={{
                         filter: 'drop-shadow(0 0 20px rgba(var(--primary), 0.6)) drop-shadow(0 0 40px rgba(var(--primary), 0.4))',
                       }}
                     />
                     
                     {/* Overlay gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-xl"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl"></div>
                   </div>
                 </div>
               </div>
