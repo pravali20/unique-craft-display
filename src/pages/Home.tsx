@@ -3,7 +3,6 @@ import { Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SocialLinks from "@/components/SocialLinks";
 import { Link } from "react-router-dom";
-import profileImage from "@/assets/profile-cropped.png";
 
 const Home = () => {
   return (
@@ -62,7 +61,7 @@ const Home = () => {
                 <div className="glass-card-intense p-3 rounded-2xl hover-lift">
                   <div className="w-full h-full bg-gradient-hero rounded-2xl overflow-hidden relative">
                     <img
-                      src={profileImage}
+                      src="/lovable-uploads/c24cb7aa-b8a1-49ee-8355-4e74311c6265.png"
                       alt="Pravalika Koneti"
                       className="w-full h-full object-cover object-top animate-float-slow glow-intense"
                       style={{
