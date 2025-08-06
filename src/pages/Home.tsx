@@ -57,7 +57,7 @@ const Home = () => {
           <div className="flex justify-center animate-bounce-in" style={{ animationDelay: '0.4s' }}>
             <div className="relative group">
               {/* Main image container */}
-              <div className="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72">
+              <div className="relative w-40 h-40 sm:w-48 sm:h-48 lg:w-52 lg:h-52">
                 <div className="glass-card-intense p-3 rounded-2xl hover-lift">
                   <div className="w-full h-full bg-gradient-hero rounded-2xl overflow-hidden relative">
                     <img
