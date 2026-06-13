@@ -96,7 +96,7 @@ const Home = () => {
             >
               <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">🚀</div>
               <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
-                6+ Projects
+                Projects
               </h3>
               <p className="text-muted-foreground text-lg">
                 Built with modern technologies and best practices
@@ -132,7 +132,7 @@ const Home = () => {
             >
               <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">⚡</div>
               <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
-                10+ Skills
+                Skills
               </h3>
               <p className="text-muted-foreground text-lg">
                 Technologies I master and love working with
