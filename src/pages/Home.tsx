@@ -53,13 +53,13 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Enhanced Profile Image */}
+          {/* Enhanced Profile Image - Horizontal Rectangle */}
           <div className="flex justify-center animate-bounce-in" style={{ animationDelay: '0.4s' }}>
             <div className="relative group">
               {/* Main image container */}
-              <div className="relative w-40 h-40 sm:w-48 sm:h-48 lg:w-52 lg:h-52">
+              <div className="relative w-72 h-44 sm:w-80 sm:h-48 lg:w-96 lg:h-56">
                 <div className="glass-card-intense p-3 rounded-2xl hover-lift">
-                  <div className="w-full h-full bg-gradient-hero rounded-2xl overflow-hidden relative">
+                  <div className="w-full h-full bg-gradient-hero rounded-xl overflow-hidden relative">
                     <img
                       src="/lovable-uploads/c24cb7aa-b8a1-49ee-8355-4e74311c6265.png"
                       alt="Pravalika Koneti"
@@ -70,7 +70,7 @@ const Home = () => {
                     />
                     
                     {/* Overlay gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-xl"></div>
                   </div>
                 </div>
               </div>
