@@ -152,19 +152,6 @@ const Contact = () => {
                     className="resize-none"
                   />
                 </div>
-                <div>
-                  <Input
-                    type="url"
-                    placeholder="Enter your Zapier webhook URL here..."
-                    value={webhookUrl}
-                    onChange={(e) => setWebhookUrl(e.target.value)}
-                    required
-                    className="border-2 border-dashed border-primary/50"
-                  />
-                  <p className="text-xs text-muted-foreground mt-2">
-                    Create a Zapier webhook trigger and paste the URL here to receive form submissions
-                  </p>
-                </div>
                 <div className="flex items-center space-x-2">
                   <input 
                     type="checkbox" 
